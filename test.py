@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
  
 dt = 0.1
-mx = 10
-my = 10
-k = 0.47
+m = 10
+ky = 0.47
+kz = 0.47
 gx = 0
 gy = -10
 x0 = 0
@@ -15,16 +15,16 @@ v0y = 1000
 
 
 def xt(t):
-    return x0+mx/k*((v0x-mx*gx/k)*(1-pow(np.e,-k / mx * t))+gx*t)
+    return x0+m/kx*((v0x-m*gx/kx)*(1-pow(np.e,-kx / m * t))+gx*t)
  
 def yt(t):
-    return y0+my/k*((v0y-my*gy/k)*(1-pow(np.e,-k / my * t))+gy*t)
+    return y0+m/ky*((v0y-m*gy/ky)*(1-pow(np.e,-ky / m * t))+gy*t)
  
 def vxt(t):
-    return v0x * pow(np.e,-k / mx * t) - gx * mx / k * (1 - pow(np.e,-k / mx * t))
+    return v0x * pow(np.e,-kx / m * t) - gx * m / kx * (1 - pow(np.e,-kx / m * t))
  
 def vyt(t):
-    return v0y * pow(np.e,-k / my * t) + gy * my / k * (1 - pow(np.e,-k / my * t))
+    return v0y * pow(np.e,-ky / m * t) + gy * m / ky * (1 - pow(np.e,-ky / m * t))
 
 x = []
 y = []
